@@ -1,0 +1,21 @@
+# bind-source file to load startup programs for bns-normandy
+
+# Symlink this file with:
+# ln -s /path/to/this/file /homefolder/.config/tmux_programs.conf
+
+# Keep a terminal after a default program closes
+# Edit: it looks like we're just going to spawn bash after a program exits
+#set set-remain-on-exit on
+set automatic-rename off
+
+# Initial Layout
+respawnw -k -t 1 'htop; /bin/bash'
+splitw -v -p 40 -t 1 'sudo iotop; /bin/bash'
+renamew -t 1 "top"
+
+neww -n net 'sudo iftop; /bin/bash'
+splitw -v -p 40 -t "net"
+
+neww -n gen '/bin/bash'
+
+selectw -t "top"
