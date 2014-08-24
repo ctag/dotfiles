@@ -14,7 +14,7 @@ splitw -v -p 40 -t 1 'sudo iotop; /bin/bash'
 renamew -t 1 "top"
 
 neww -n net 'sudo iftop; /bin/bash'
-splitw -v -p 40 -t "net"
+splitw -v -p 40 -t "net" 'arm'
 
 neww -n gen '/bin/bash'
 
