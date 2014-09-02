@@ -9,7 +9,7 @@
 #LICENSE /home/berocs/LICENSE
 
 # Global
-tmux/tmux.conf /etc/tmux.conf
+shared/tmux.conf /etc/tmux.conf
 
 # Specific to the computer
-tmux/tmux.normandy /home/berocs/.config/tmux_programs.conf
+normandy/tmux/tmux_programs.conf /home/berocs/.config/tmux_programs.conf
