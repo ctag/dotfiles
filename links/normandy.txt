@@ -11,7 +11,5 @@
 # Global
 tmux/tmux.conf /etc/tmux.conf
 
-# Computer specific
-kharselim/i3/i3status.conf /etc/i3status.conf
-kharselim/i3/config /home/berocs/.i3/config
-kharselim/i3/screen.sh /home/berocs/.i3/screen.sh
+# Specific to the computer
+tmux/tmux.normandy /home/berocs/.config/tmux_programs.conf
