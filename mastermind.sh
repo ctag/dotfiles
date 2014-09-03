@@ -11,19 +11,21 @@ echo "Starting Mastermind."
 args_n=$# # Store the number of input arguments to args_n
 base_dir="" # Initialize base_dir variable
 
+echo "" > mastermind.log # Initialize log file
+
 #"${args}"
 
 CleanLine () {
 	checkline=$@ # Capture the passed variables ($@ = all pass args)
-	echo "RmComments():"
-	echo "Line: ${checkline}"
+	echo "RmComments():" >> mastermind.log
+	echo "Line: ${checkline}" >> mastermind.log
 	firstChar=`echo "$checkline" | cut -c 1` # Cut the first character from the line to check for comments
 	#echo "First Char: ${firstChar}"
 	if [[ "$firstChar" = "#" ]]; then
-		echo "Must be a commented line, returning '1'"
+		echo "Must be a commented line, returning '1'" >> mastermind.log
 		return 1 # This line must be a comment, skip it.
 	elif [[ "$firstChar" = "" ]]; then
-		echo "Must be an empty line, returning '1'"
+		echo "Must be an empty line, returning '1'" >> mastermind.log
 		return 1 
 	else
 		return 0
@@ -40,7 +42,7 @@ Remove () {
 			continue # There was a comment, don't parse it
 		fi
 		rmline=`echo "${line}" | awk '{ print $2 }'`
-		echo "rm ${rmline}"
+		echo "rm ${rmline}" >> mastermind.log
 		rm -i $rmline
 	done < $rmfile
 }
@@ -54,11 +56,11 @@ Add () {
 		if [[ "$returned" = "1" ]]; then
 			continue # There was a comment, don't parse it
 		elif [[ "$base_dir" != "" ]]; then
-			echo "newlink: ${line}"
-			echo "ln -s ${base_dir}${line}"
+			echo "newlink: ${line}" >> mastermind.log
+			echo "ln -s ${base_dir}${line}" >> mastermind.log
 			ln -v -s $base_dir$line
 		else
-			echo "There was a problem with $base_dir, please address. Exiting for safety."
+			echo "There was a problem with $base_dir, please address. Exiting for safety." >> mastermind.log
 			exit
 		fi
 	done < $nwfile
