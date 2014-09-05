@@ -1,0 +1,12 @@
+
+# gpu1part
+
+#
+# Screens added by berocs
+#
+
+# lower
+#workspace "rand" output DVI-I-1
+
+# upper
+#workspace "irc" output DVI-D-0
