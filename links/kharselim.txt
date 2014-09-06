@@ -1,7 +1,8 @@
 #/home/berocs/Documents/dotfiles/
-# The first line must be the base path of dotfiles dir
+# The first line must be the base path of dotfiles
 
 # This is the main configuration file for mastermind
+# Usage: ./mastermind.sh links/kharselim.old links/kharselim.txt
 
 # Say you want to link 
 # /home/berocs/Documents/dotfiles/LICENSE to /home/berocs/LICENSE

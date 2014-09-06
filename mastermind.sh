@@ -43,7 +43,7 @@ Remove () {
 		fi
 		rmline=`echo "${line}" | awk '{ print $2 }'`
 		echo "rm ${rmline}" >> mastermind.log
-		rm -i $rmline
+		sudo rm -i $rmline
 	done < $rmfile
 }
 
@@ -58,7 +58,7 @@ Add () {
 		elif [[ "$base_dir" != "" ]]; then
 			echo "newlink: ${line}" >> mastermind.log
 			echo "ln -s ${base_dir}${line}" >> mastermind.log
-			ln -v -s $base_dir$line
+			sudo ln -v -s $base_dir$line
 		else
 			echo "There was a problem with $base_dir, please address. Exiting for safety." >> mastermind.log
 			exit
