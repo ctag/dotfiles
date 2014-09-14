@@ -162,20 +162,20 @@ bindsym Control+$mod+Right workspace next_on_output
 # Move to workspace prev
 bindsym Control+$mod+Left workspace prev_on_output
 
-bindsymc Control+$mod+l exec i3lock
+bindsym Control+$mod+l exec i3lock
 
 # Start wireless manager on first load
 #exec wicd-gtk -t
-exec nm-applet
+#exec nm-applet
 
 # Start gnome daemons
 #exec gnome-keyring-daemon
-exec gnome-settings-daemon
+#exec gnome-settings-daemon
 
 hide_edge_borders both
 
 # Set background
-exec_always /home/berocs/.i3/background.sh
+#exec_always /home/berocs/.i3/background.sh
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
