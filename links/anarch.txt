@@ -13,4 +13,5 @@
 
 # Specific to the computer
 #xwing/tmux/tmux_programs.conf /home/berocs/.config/tmux_programs.conf
-anarch/i3 /home/berocs/.i3
+anarch/.i3 /home/berocs/.i3
+anarch/calibre /home/berocs/.config/calibre
