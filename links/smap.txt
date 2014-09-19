@@ -11,6 +11,9 @@
 # Global
 #shared/tmux.conf /etc/tmux.conf
 
+# Shared Calibre
+shared/calibre /home/berocs/.config/calibre
+
 # Specific to the computer
 #xwing/tmux/tmux_programs.conf /home/berocs/.config/tmux_programs.conf
 smap/i3 /home/berocs/.i3
