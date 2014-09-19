@@ -1,0 +1,116 @@
+{
+  "main_window_state": {
+    "__class__": "bytearray", 
+    "__value__": "AAAA/wAAAAL9AAAAAgAAAAAAAAAAAAAAAPwCAAAAAfsAAAAQAHQAbwBjAC0AZABvAGMAawAAAAAA/////wAAAFcA////AAAAAQAAAAAAAAAA/AIAAAAB+wAAABwAYgBvAG8AawBtAGEAcgBrAHMALQBkAG8AYwBrAAAAAAD/////AAAAwAD///8AAAdFAAAD7QAAAAQAAAAEAAAACAAAAAj8AAAAAgAAAAAAAAABAAAAEAB0AG8AbwBsAF8AYgBhAHIDAAAAAP////8AAAAAAAAAAAAAAAIAAAABAAAAEgB0AG8AbwBsAF8AYgBhAHIAMgEAAAAA/////wAAAAAAAAAA"
+  }, 
+  "in_paged_mode": true, 
+  "viewer_window_geometry": {
+    "__class__": "bytearray", 
+    "__value__": "AdnQywABAAAAAAAAAAAESgAAB38AAAhcAAAAAAAABEoAAAd/AAAIXAAAAAAAAA=="
+  }, 
+  "viewer_toc_isvisible": false, 
+  "multiplier": 1.0, 
+  "custom_colors_for_color_dialog": [
+    [
+      255, 
+      255, 
+      255, 
+      255
+    ], 
+    [
+      255, 
+      255, 
+      255, 
+      255
+    ], 
+    [
+      255, 
+      255, 
+      255, 
+      255
+    ], 
+    [
+      255, 
+      255, 
+      255, 
+      255
+    ], 
+    [
+      255, 
+      255, 
+      255, 
+      255
+    ], 
+    [
+      255, 
+      255, 
+      255, 
+      255
+    ], 
+    [
+      255, 
+      255, 
+      255, 
+      255
+    ], 
+    [
+      255, 
+      255, 
+      255, 
+      255
+    ], 
+    [
+      255, 
+      255, 
+      255, 
+      255
+    ], 
+    [
+      255, 
+      255, 
+      255, 
+      255
+    ], 
+    [
+      255, 
+      255, 
+      255, 
+      255
+    ], 
+    [
+      255, 
+      255, 
+      255, 
+      255
+    ], 
+    [
+      255, 
+      255, 
+      255, 
+      255
+    ], 
+    [
+      255, 
+      255, 
+      255, 
+      255
+    ], 
+    [
+      255, 
+      255, 
+      255, 
+      255
+    ], 
+    [
+      255, 
+      255, 
+      255, 
+      255
+    ]
+  ], 
+  "viewer_open_history": [
+    "/home/berocs/library/Jack Purdum/Beginning C for Arduino (10)/Beginning C for Arduino - Jack Purdum.epub", 
+    "/home/berocs/library/Amazon/Kindle Paperwhite User's Guide 2nd Edition (2)/Kindle Paperwhite User's Guide 2nd Edition - Amazon.azw3", 
+    "/tmp/calibre_2.3.0_tmp_y_qt6K/AM1__b_view_device_book.epub"
+  ]
+}
