@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>lineedit_history_match_books_dialog</key>
+	<array>
+		<string>Calibre Quick Start Guide</string>
+	</array>
+	<key>lineedit_history_store_search_search</key>
+	<array>
+		<string>haynes civic</string>
+	</array>
+	<key>lineedit_history_store_search_search_author</key>
+	<array>
+		<string>feynmann</string>
+		<string>cory</string>
+	</array>
+	<key>lineedit_history_store_search_search_title</key>
+	<array>
+		<string>feymann</string>
+		<string>little brother</string>
+	</array>
+</dict>
+</plist>

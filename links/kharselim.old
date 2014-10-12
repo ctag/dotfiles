@@ -1,0 +1,20 @@
+#/home/berocs/Documents/dotfiles/
+# The first line must be the base path of dotfiles
+
+# This is the main configuration file for mastermind
+# Usage: ./mastermind.sh links/kharselim.old links/kharselim.txt
+
+# Say you want to link 
+# /home/berocs/Documents/dotfiles/LICENSE to /home/berocs/LICENSE
+# You would use this line:
+#LICENSE /home/berocs/LICENSE
+
+# Global
+shared/tmux.conf /etc/tmux.conf
+
+# Computer specific
+kharselim/i3status.conf /etc/i3status.conf
+kharselim/i3 /home/berocs/.i3
+kharselim/i3.desktop /usr/share/xsessions/gnome-i3.desktop
+kharselim/i3.session /usr/share/gnome-session/sessions/i3.session
+

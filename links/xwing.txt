@@ -1,0 +1,15 @@
+#/home/berocs/Documents/dotfiles/
+# The first line must be the base path of dotfiles dir
+
+# This is the main configuration file for mastermind
+
+# Say you want to link 
+# /home/berocs/Documents/dotfiles/LICENSE to /home/berocs/LICENSE
+# You would use this line:
+#LICENSE /home/berocs/LICENSE
+
+# Global
+shared/tmux.conf /etc/tmux.conf
+
+# Specific to the computer
+xwing/tmux/tmux_programs.conf /home/berocs/.config/tmux_programs.conf
