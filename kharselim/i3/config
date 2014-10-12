@@ -175,7 +175,8 @@ bindsym Control+$mod+l exec i3lock
 hide_edge_borders both
 
 # Set background
-#exec_always /home/berocs/.i3/background.sh
+exec_always /home/berocs/.i3/feh_bg.sh
+bindsym Control+$mod+b exec /home/berocs/.i3/feh_bg.sh
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

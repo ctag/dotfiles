@@ -1,4 +1,4 @@
-#/home/berocs/Documents/dotfiles/
+#/home/berocs/dotfiles/
 # The first line must be the base path of dotfiles dir
 
 # This is the main configuration file for mastermind
@@ -9,11 +9,7 @@
 #LICENSE /home/berocs/LICENSE
 
 # Global
-#shared/tmux.conf /etc/tmux.conf
-
-# Shared Calibre
-shared/calibre /home/berocs/.config/calibre
+shared/tmux.conf /etc/tmux.conf
 
 # Specific to the computer
-#xwing/tmux/tmux_programs.conf /home/berocs/.config/tmux_programs.conf
-smap/i3 /home/berocs/.i3
+mfalcon/tmux/tmux_programs.conf /home/berocs/.config/tmux_programs.conf
