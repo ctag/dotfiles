@@ -43,7 +43,7 @@ Remove () {
 		fi
 		rmline=`echo "${line}" | awk '{ print $2 }'`
 		echo "rm ${rmline}" >> mastermind.log
-		sudo rm -i $rmline
+		sudo rm $rmline
 	done < $rmfile
 }
 
