@@ -104,7 +104,7 @@ send_to_device_template_history = cPickle.loads('\x80\x02]q\x01.')
  
 # main search history
 # Search history for the main GUI
-main_search_history = cPickle.loads('\x80\x02]q\x01.')
+main_search_history = cPickle.loads('\x80\x02]q\x01(X\x03\x00\x00\x00pgpq\x02X\x06\x00\x00\x00basicsq\x03X\x03\x00\x00\x00mspq\x04X\x0c\x00\x00\x00ondevice:"("q\x05e.')
  
 # viewer search history
 # Search history for the ebook viewer
@@ -120,7 +120,7 @@ scheduler_search_history = cPickle.loads('\x80\x02]q\x01.')
  
 # plugin search history
 # Search history for the plugin preferences
-plugin_search_history = cPickle.loads('\x80\x02]q\x01.')
+plugin_search_history = cPickle.loads('\x80\x02]q\x01(X\n\x00\x00\x00collectionq\x02X\x06\x00\x00\x00kindleq\x03e.')
  
 # shortcuts search history
 # Search history for the keyboard preferences
@@ -136,7 +136,7 @@ tweaks_search_history = cPickle.loads('\x80\x02]q\x01.')
  
 # worker limit
 # Maximum number of simultaneous conversion/news download jobs. This number is twice the actual value for historical reasons.
-worker_limit = 6
+worker_limit = 12
  
 # get social metadata
 # Download social metadata (tags/rating/etc.)
