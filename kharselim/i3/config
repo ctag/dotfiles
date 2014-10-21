@@ -162,7 +162,7 @@ bindsym Control+$mod+Right workspace next_on_output
 # Move to workspace prev
 bindsym Control+$mod+Left workspace prev_on_output
 
-bindsym Control+$mod+l exec i3lock
+bindsym Control+$mod+l exec i3lock & /home/berocs/.i3/screen.sh off
 
 # Start wireless manager on first load
 #exec wicd-gtk -t
