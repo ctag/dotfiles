@@ -1,17 +1,22 @@
 {
   "quick_start_guide_added": true, 
+  "comments_dialog_geom": {
+    "__class__": "bytearray", 
+    "__value__": "AdnQywABAAAAAAL2AAAFeAAABIkAAAcJAAAC+AAABXgAAASHAAAHBwAAAAAAAA=="
+  }, 
   "book_details_splitter_horizontal_state": [
     true, 
-    200
+    228
   ], 
   "jobs view column layout3": {
     "__class__": "bytearray", 
-    "__value__": "AAAA/wAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAm8AAAAFAQEBAAAAAAAAAAAAAAAAAGT/////AAAAhAAAAAAAAAAFAAAA7QAAAAEAAAAAAAAAVgAAAAEAAAAAAAAAZAAAAAEAAAAAAAAAZAAAAAEAAAAAAAAAZAAAAAEAAAAAAAAD6A=="
+    "__value__": "AAAA/wAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAxMAAAAFAQEBAAAAAAAAAAAAAAAAAGT/////AAAAhAAAAAAAAAAFAAABVgAAAAEAAAAAAAAAkQAAAAEAAAAAAAAAZAAAAAEAAAAAAAAAZAAAAAEAAAAAAAAAZAAAAAEAAAAAAAAD6A=="
   }, 
   "convert_single_dialog_geom": {
     "__class__": "bytearray", 
     "__value__": "AdnQywABAAAAAAG+AAAE4gAABcEAAAefAAABwAAABOIAAAW/AAAHnQAAAAAAAA=="
   }, 
+  "advanced search dialog current tab": 0, 
   "card_b_view books view state": {
     "column_alignment": {
       "timestamp": "center", 
@@ -42,6 +47,12 @@
     ], 
     "hidden_columns": [], 
     "last_modified_injected": true
+  }, 
+  "previous_sort_order_BooksView": {
+    "#kindlecollections": true, 
+    "authors": true, 
+    "ondevice": false, 
+    "title": true
   }, 
   "metadata_single_gui_geom": {
     "__class__": "bytearray", 
@@ -85,7 +96,11 @@
   }, 
   "jobs_dialog_geometry": {
     "__class__": "bytearray", 
-    "__value__": "AdnQywABAAAAAAKCAAAFMQAABP4AAAdQAAAChAAABTEAAAT8AAAHTgAAAAAAAA=="
+    "__value__": "AdnQywABAAAAAALeAAAFoAAABVoAAAe/AAAC4AAABaAAAAVYAAAHvQAAAAAAAA=="
+  }, 
+  "tag_editor_geometry": {
+    "__class__": "bytearray", 
+    "__value__": "AdnQywABAAAAAAKSAAAFjAAABO0AAAb1AAAClAAABYwAAATrAAAG8wAAAAAAAA=="
   }, 
   "replace_scene_breaks_history": [
     "", 
@@ -98,6 +113,7 @@
     "\u221e \u221e \u221e", 
     "\u00a4 \u00a4 \u00a4"
   ], 
+  "bulk_metadata_window_tab": 1, 
   "memory_view books view state": {
     "column_alignment": {
       "timestamp": "center", 
@@ -114,11 +130,11 @@
     "languages_injected": true, 
     "column_positions": {
       "title": 1, 
-      "timestamp": 3, 
+      "timestamp": 4, 
       "inlibrary": 0, 
-      "collections": 5, 
+      "collections": 3, 
       "authors": 2, 
-      "size": 4
+      "size": 5
     }, 
     "sort_history": [
       [
@@ -135,6 +151,10 @@
     200
   ], 
   "toolbar_icon_size": "small", 
+  "kindle_collections plugin:edit collections dialog: geometry": {
+    "__class__": "bytearray", 
+    "__value__": "AdnQywABAAAAAAHIAAAFjQAABbcAAAb0AAABygAABY0AAAW1AAAG8gAAAAAAAA=="
+  }, 
   "action-layout-toolbar-child": [
     "Prince PDF", 
     "Kindle Collections"
@@ -169,12 +189,13 @@
   ], 
   "show_emblems": false, 
   "library_usage_stats": {
-    "/home/berocs/library": 6
+    "/home/berocs/library": 12
   }, 
   "Plugin Updater plugin:plugin updater dialog": {
     "__class__": "bytearray", 
     "__value__": "AdnQywABAAAAAAH0AAAFVQAABYwAAAcsAAAB9gAABVUAAAWKAAAHKgAAAAAAAA=="
   }, 
+  "Kindle Collections: Menu Style": "Show menu (default)", 
   "grid view visible": false, 
   "duplicate finder plugin:duplicate dialog": {
     "__class__": "bytearray", 
@@ -288,6 +309,10 @@
       255
     ]
   ], 
+  "kindle_collections plugin:edit settings dialog: geometry": {
+    "__class__": "bytearray", 
+    "__value__": "AdnQywABAAAAAAMYAAAGCwAABGgAAAZ2AAADGgAABgsAAARmAAAGdAAAAAAAAA=="
+  }, 
   "book_info_dialog_layout": [
     {
       "__class__": "bytearray", 
@@ -330,11 +355,19 @@
     "Generate Cover", 
     "Modify ePub"
   ], 
+  "kindle_collections plugin:import collections dialog: geometry": {
+    "__class__": "bytearray", 
+    "__value__": "AdnQywABAAAAAAKwAAAGCwAABM8AAAZ3AAACsgAABgsAAATNAAAGdQAAAAAAAA=="
+  }, 
   "convert_bulk_dialog_geom": {
     "__class__": "bytearray", 
     "__value__": "AdnQywABAAAAAAG+AAAE4gAABcEAAAefAAABwAAABOIAAAW/AAAHnQAAAAAAAA=="
   }, 
   "ui_style": "calibre", 
+  "plugin config dialog:User Interface Action:Kindle Collections": {
+    "__class__": "bytearray", 
+    "__value__": "AdnQywABAAAAAAHFAAAFHgAABbsAAAdkAAABxwAABR4AAAW5AAAHYgAAAAAAAA=="
+  }, 
   "metasingle_window_geometry3": {
     "__class__": "bytearray", 
     "__value__": "AdnQywABAAAAAAHPAAAE8QAABbAAAAeQAAAB0QAABPEAAAWuAAAHjgAAAAAAAA=="
@@ -343,12 +376,20 @@
     false, 
     300
   ], 
+  "kindle_collections plugin:import collections dialog: selected column": "Collections", 
   "duplicates-question-dialog-geometry": {
     "__class__": "bytearray", 
-    "__value__": "AdnQywABAAAAAAK3AAAFhgAABMgAAAb8AAACuQAABYYAAATGAAAG+gAAAAAAAA=="
+    "__value__": "AdnQywABAAAAAALpAAAF1AAABPoAAAdKAAAC6wAABdQAAAT4AAAHSAAAAAAAAA=="
   }, 
   "preferences_window_geometry": {
     "__class__": "bytearray", 
     "__value__": "AdnQywABAAAAAAHvAAAE2gAABZQAAAerAAAB8QAABNoAAAWSAAAHqQAAAAAAAA=="
+  }, 
+  "previous_sort_order_DeviceBooksView": {
+    "inlibrary": true
+  }, 
+  "bulk_metadata_window_geometry": {
+    "__class__": "bytearray", 
+    "__value__": "AdnQywABAAAAAAHdAAAE/gAABaIAAAeEAAAB3wAABP4AAAWgAAAHggAAAAAAAA=="
   }
 }
