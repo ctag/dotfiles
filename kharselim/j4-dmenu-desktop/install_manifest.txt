@@ -1,0 +1,1 @@
+/usr/local/bin/j4-dmenu-desktop

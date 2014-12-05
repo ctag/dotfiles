@@ -1,0 +1,9 @@
+build/*
+CMakeFiles/*
+Makefile
+*~
+debug/*
+release/*
+test/*
+tests/*
+

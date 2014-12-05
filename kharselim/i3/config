@@ -27,8 +27,8 @@ bindsym $mod+Shift+Q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
-#bindsym $mod+d exec j4-dmenu-desktop
-bindsym $mod+d exec i3-dmenu-desktop
+bindsym $mod+d exec j4-dmenu-desktop
+#bindsym $mod+d exec i3-dmenu-desktop
 
 # change focus
 bindsym $mod+j focus left
@@ -162,7 +162,7 @@ bindsym Control+$mod+Right workspace next_on_output
 # Move to workspace prev
 bindsym Control+$mod+Left workspace prev_on_output
 
-bindsym Control+$mod+l exec i3lock & /home/berocs/.i3/screen.sh off
+bindsym Control+$mod+l exec i3lock -d -u -e -i /home/berocs/Pictures/i3lock/bsod.png & /home/berocs/.i3/screen.sh off
 
 # Start wireless manager on first load
 #exec wicd-gtk -t
@@ -182,4 +182,8 @@ bindsym Control+$mod+b exec /home/berocs/.i3/feh_bg.sh
 # finds out, if available)
 bar {
         status_command i3status
+	mode hide
+	position bottom
+	hidden_state hide
+	modifier $mod
 }
