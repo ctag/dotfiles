@@ -3,6 +3,14 @@
 # Start xscreensaver
 DISPLAY=:0 xscreensaver-command --lock
 
+sleep 5
+
+/home/berocs/.i3/screen.sh standby
+
+#`sleep 30
+
+#qmotion
+
 exit
 
 # i3lock only accepts .png files

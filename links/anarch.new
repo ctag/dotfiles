@@ -11,6 +11,9 @@
 # Global
 #shared/tmux.conf /etc/tmux.conf
 
+# Desktop specific
+shared/.password-store /home/berocs/.password-store
+
 # Specific to the computer
 #xwing/tmux/tmux_programs.conf /home/berocs/.config/tmux_programs.conf
 anarch/.i3 /home/berocs/.i3
