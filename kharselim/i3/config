@@ -30,6 +30,9 @@ bindsym $mod+Shift+Q kill
 bindsym $mod+d exec j4-dmenu-desktop
 #bindsym $mod+d exec i3-dmenu-desktop
 
+# Start password-dmenu
+bindsym $mod+p exec /home/berocs/Documents/password-store/contrib/dmenu/passmenu
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
