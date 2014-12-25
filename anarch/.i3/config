@@ -226,10 +226,7 @@ exec_always /home/berocs/.i3/feh_bg_indiv.sh
 exec pulseaudio --start &
 
 # Start redshift on all monitors
-exec redshift -m vidmode:screen=0 &
-exec redshift -m vidmode:screen=1 &
-exec redshift -m vidmode:screen=2 &
-exec redshift -m vidmode:screen=3 &
+#exec redshift -m vidmode &
 
 #
 # Start i3bar to display a workspace bar (plus the system information i3status
