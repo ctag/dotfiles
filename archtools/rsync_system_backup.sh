@@ -6,10 +6,24 @@
 # Last updated December 2014
 #
 
+backupNFS="/mnt/bkup"
+
 echo "Backing up the entire system."
 
+echo "Pulling computer name from first argument."
+backupComp=$1
+
+echo "Computer name: $backupComp"
+
+if [[ "$backupComp" = "" ]]
+then
+	echo "This script requires a computer name (bns-anarch, bns-kharselim) as the first argument."
+	echo "Exiting."
+	exit
+fi
+
 backupDir=`date +"%Y_%m_%d"`
-backupPath="/mnt/bkup/bns-anarch/$backupDir/"
+backupPath="$backupNFS/$backupComp/$backupDir/"
 
 if [[ ! -d "$backupPath" ]]
 then
@@ -20,9 +34,9 @@ else
 	echo "backup folder exists, continue-ing with overwrite."
 fi
 
-sudo rsync -aAv /* rsync://192.168.13.14/bkup/bns-anarch/latestBackup/ --delete \
+sudo rsync -aAv /* rsync://192.168.13.14/bkup/$backupComp/latestBackup/ --delete \
 --exclude={/dev/*,/proc/*,/sys/*,/tmp/*,/run/*,/mnt/*,/media/*,/lost+found,/var/lib/pacman/sync/*,/var/log/journal/*,/var/lib/boinc/slots/*,/home/berocs/} \
-> /home/berocs/Documents/archtools/rsync.output
+> /home/berocs/Documents/dotfiles/archtools/output.rsync
 
 rsyncStatus=$?
 
@@ -36,7 +50,7 @@ else
 fi
 
 echo "Moving contents to permenant folder."
-cp -ar /mnt/bkup/bns-anarch/latestBackup/* ${backupPath}
+sudo cp -ar $backupNFS/$backupComp/latestBackup/* ${backupPath}
 
 echo "Done!"
 
