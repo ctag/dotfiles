@@ -25,8 +25,8 @@ i3status | (read line && echo $line && read line && echo $line && while :
 do
 	read line
 
-	gpuTemp0=`nvidia-smi -q -d TEMPERATURE | awk '$6 == "C" { if (NR<11) print $5 }'`
-	gpuTemp1=`nvidia-smi -q -d TEMPERATURE | awk '$6 == "C" { if (NR>11) print $5 }'`
+	gpuTemp0=-1 #`nvidia-smi -q -d TEMPERATURE | awk '$6 == "C" { if (NR<11) print $5 }'`
+	gpuTemp1=-1 #`nvidia-smi -q -d TEMPERATURE | awk '$6 == "C" { if (NR>11) print $5 }'`
 	
 	gpuColor0=$coolTemp
 	gpuColor1=$coolTemp
