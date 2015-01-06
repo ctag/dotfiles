@@ -13,7 +13,7 @@
 shared/tmux.conf /etc/tmux.conf
 
 # Personal Computers
-shared/.password-store /home/berocs/.password-store
+#shared/.password-store /home/berocs/.password-store
 
 # Computer specific
 kharselim/i3status.conf /etc/i3status.conf
