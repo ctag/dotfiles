@@ -158,14 +158,15 @@ bindsym $mod+r mode "resize"
 # Screens
 #
 
-workspace 1 output xinerama-0
-workspace 2 output xinerama-0
-workspace 3 output xinerama-2
-workspace 4 output xinerama-2
-workspace 5 output xinerama-1
-workspace 6 output xinerama-1
-workspace 7 output xinerama-3
-workspace 8 output xinerama-3
+workspace 1 output DVI-I-1
+workspace 2 output DVI-I-1
+workspace 3 output DVI-I-1
+workspace 4 output DVI-D-1
+workspace 5 output DVI-D-1
+workspace 6 output DVI-D-1
+workspace 7 output HDMI-1
+workspace 8 output HDMI-1
+workspace 9 output HDMI-1
 
 #
 # Keybindings
@@ -211,6 +212,7 @@ bindsym Control+$mod+Left workspace prev_on_output
 hide_edge_borders both
 focus_follows_mouse yes
 mouse_warping none
+workspace_layout tabbed # Set mode to tabbed by default
 
 #
 # Exec
