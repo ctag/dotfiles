@@ -78,8 +78,7 @@ caseColor=$coolTemp
 
 
 
-	insert="[{\"full_text\":\"GPU0 [$gpuTemp0 C]\",\"color\":\"$gpuColor0\"},\
-		{\"full_text\":\"GPU1 [$gpuTemp1 C]\",\"color\":\"$gpuColor1\"},\
+#	insert="[{\"full_text\":\"GPU0 [0 C]\",\"color\":\"$gpuColor0\"},\
 		{\"full_text\":\"CPU [$cpuTemp C]\",\"color\":\"$cpuColor\"},\
 		{\"full_text\":\"CASE [$caseTemp C]\",\"color\":\"$caseColor\"},"
 
