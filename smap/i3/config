@@ -181,7 +181,7 @@ bindsym Control+$mod+Left workspace prev_on_output
 bindsym Control+$mod+p exec /home/berocs/.i3/startup.sh
 
 # Start Udiskie daemon on first-run
-exec udiskie &
+exec udiskie -2 -t &
 
 # Set Wallpaper on each reload
 exec_always /home/berocs/.i3/background.sh
