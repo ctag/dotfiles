@@ -153,11 +153,15 @@ bindsym $mod+r mode "resize"
 
 # Turn off the screen
 bindsym Control+$mod+o exec /home/berocs/.i3/screen.sh off
+bindsym XF86Display exec /home/berocs/.i3/screen.sh off
 
 # Volume control
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute
 bindsym XF86AudioLowerVolume  exec amixer -q sset Master 5%- unmute
 bindsym XF86AudioMute exec amixer -q sset Master toggle
+
+# Toggle Trackpoint/Trackpad
+bindsym XF86TouchpadToggle exec /home/berocs/.i3/trackpadpoint.sh
 
 # Create new workspace
 bindsym Control+$mod+n exec /home/berocs/.i3/make_workspace.sh
@@ -172,7 +176,7 @@ bindsym Control+$mod+l exec i3lock -d -u -e -i /home/berocs/Pictures/i3lock/bsod
 
 # Start wireless manager on first load
 #exec wicd-gtk -t
-#exec nm-applet
+exec nm-applet
 
 # Start gnome daemons
 #exec gnome-keyring-daemon
