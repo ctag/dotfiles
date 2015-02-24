@@ -17,6 +17,7 @@ shared/tmux.conf /etc/tmux.conf
 
 # Computer specific
 kharselim/i3status.conf /etc/i3status.conf
+kharselim/status_expanded.sh /home/berocs/.i3/status_expanded.sh
 kharselim/i3 /home/berocs/.i3
 kharselim/i3/feh_bg.sh /home/berocs/.i3
 kharselim/gnome-i3.desktop /usr/share/xsessions/gnome-i3.desktop
