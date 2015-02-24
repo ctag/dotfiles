@@ -178,6 +178,9 @@ bindsym Control+$mod+l exec i3lock -d -u -e -i /home/berocs/Pictures/i3lock/bsod
 #exec wicd-gtk -t
 exec nm-applet
 
+#start bluetooth manager
+exec blueman-applet
+
 # Start gnome daemons
 #exec gnome-keyring-daemon
 #exec gnome-settings-daemon
