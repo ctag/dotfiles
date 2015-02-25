@@ -163,6 +163,9 @@ bindsym XF86AudioMute exec amixer -q sset Master toggle
 # Toggle Trackpoint/Trackpad
 bindsym XF86TouchpadToggle exec /home/berocs/.i3/trackpadpoint.sh
 
+# Take screenshot
+bindsym Print exec /home/berocs/.i3/scrot.sh
+
 # Create new workspace
 bindsym Control+$mod+n exec /home/berocs/.i3/make_workspace.sh
 
