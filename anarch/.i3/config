@@ -238,8 +238,8 @@ exec pulseaudio --start &
 # Bar - Bottom Left and Right Monitor
 bar {
   id bar-0
-        #status_command /home/berocs/.i3/status_expanded.sh
-	status_command i3status
+        status_command /home/berocs/.i3/status_expanded.sh
+	#status_command i3status
 	position bottom
   colors {
     separator #666666
