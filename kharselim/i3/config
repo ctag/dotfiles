@@ -197,9 +197,22 @@ bindsym Control+$mod+b exec /home/berocs/.i3/feh_bg.sh
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command /home/berocs/.i3/status_expanded.sh
+  status_command /home/berocs/.i3/status_expanded.sh
 	mode hide
 	position bottom
 	hidden_state hide
 	modifier $mod
+  colors {
+    separator #666666
+    background #151515
+    statusline #dddddd
+    focused_workspace #0088CC #0088CC #ffffff
+    active_workspace #333333 #333333 #ffffff
+    inactive_workspace #333333 #333333 #888888
+    urgent_workspace #2f343a #900000 #ffffff
+  }
 }
+client.focused #0088CC #0088CC #ffffff #dddddd
+client.focused_inactive #333333 #333333 #888888 #292d2e
+client.unfocused #333333 #333333 #888888 #292d2e
+client.urgent #2f343a #900000 #ffffff #900000
