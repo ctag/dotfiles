@@ -8,14 +8,11 @@
 # Network Transfer Stats
 #
 
-#lowColor="#00FFFF"
-#highColor="FF0000"
-
 #ethDown=`bwm-ng -o plain -c 1 -t 1000 -u bits | awk '$1 == "total:" { print $2 $3 }'`
 #ethUp=`bwm-ng -o plain -c 1 -t 1000 -u bits | awk '$1 == "total:" { print $4 $5 }'`
 
 #
-# GPU0, GPU1, CPU, and CASE Temperatures
+# GPU0, CPU, and CASE Temperatures
 #
 coolTemp="#009999" # 008888
 warmTemp="#BBBB00" # 997777
@@ -25,36 +22,29 @@ i3status | (read line && echo $line && read line && echo $line && while :
 do
 	read line
 
-	gpuTemp0=-1 #`nvidia-smi -q -d TEMPERATURE | awk '$6 == "C" { if (NR<11) print $5 }'`
-	gpuTemp1=-1 #`nvidia-smi -q -d TEMPERATURE | awk '$6 == "C" { if (NR>11) print $5 }'`
-	
+	gpuTemp0=`sensors | awk '$1 == "temp1:" && NR < 6 { print $2 }' | grep -o [0-9][0-9]\.[0-9]`
+
 	gpuColor0=$coolTemp
-	gpuColor1=$coolTemp
-	
-	if [ "$gpuTemp0" -gt "70" ]
+
+	gpuExp=$(echo "$gpuTemp0 > 60.0" | bc)
+	if [ "$gpuExp" -eq 1 ]
 	then
 		gpuColor0=$warmTemp
 	fi
-        if [ $gpuTemp1 -gt 70 ]
+	gpuExp=$(echo "$gpuTemp0 > 73.0" | bc)
+        if [ $gpuExp -eq 1 ]
         then
-                gpuColor1=$warmTemp
+                gpuColor0=$hotTemp
         fi
 
-        if [ $gpuTemp0 -gt 85 ]
-        then
-                gpuColor0=$hotTemp
-        fi
-        if [ $gpuTemp0 -gt 85 ]
-        then
-                gpuColor0=$hotTemp
-        fi
-	
-cpuTemp=`sensors | awk '$1 == "temp1:" { if (NR<12) print $2 }' | grep -o [0-9][0-9]\.[0-9]`
-caseTemp=`sensors | awk '$1 == "temp2:" { if (NR>10) print $2 }' | grep -o [0-9][0-9]\.[0-9]`
+cpuTemp=`sensors | awk '$1 == "temp2:" && NR > 30 { print $2 }' | grep -o [0-9][0-9]\.[0-9]`
+#echo "cpu: ${cpuTemp}"
+caseTemp=`sensors | awk '$1 == "temp3:" && NR > 30 { print $2 }' | grep -o [0-9][0-9]\.[0-9]`
+#echo "case: ${caseTemp}"
 
 cpuColor=$coolTemp
 caseColor=$coolTemp
-	
+
 	cpuExp=$(echo "$cpuTemp > 50.0" | bc)
 	if [ $cpuExp -eq 1 ]
         then
@@ -78,9 +68,9 @@ caseColor=$coolTemp
 
 
 
-#	insert="[{\"full_text\":\"GPU0 [0 C]\",\"color\":\"$gpuColor0\"},\
-		{\"full_text\":\"CPU [$cpuTemp C]\",\"color\":\"$cpuColor\"},\
-		{\"full_text\":\"CASE [$caseTemp C]\",\"color\":\"$caseColor\"},"
+insert="[{\"full_text\":\"GPU0 [$gpuTemp0 C]\",\"color\":\"$gpuColor0\"},\
+{\"full_text\":\"CPU [$cpuTemp C]\",\"color\":\"$cpuColor\"},\
+{\"full_text\":\"CASE [$caseTemp C]\",\"color\":\"$caseColor\"},"
 
 	echo "${line/[/$insert}" || exit 1
 #	echo " $gpuTemp1 $line " || exit 1
