@@ -27,11 +27,30 @@ do
         then
                 fanColor=$hotTemp
         fi
-        
-	fanText="[${fan}RPM]"
+    
+    fanText="[${fan} RPM]"
 	fanJSON="[{ \"full_text\":\"${fanText}\",\"color\":\"$fanColor\" },"
 	#"[{\"full_text\":\"GPU0 [0 C]\",\"color\":\"$gpuColor0\"},
-	echo "${line/[/$fanJSON}" || exit 1
+    
+    cpuTemp=`sensors | awk '$1 == "temp1:" && NR > 4 && NR < 10 { print $2 } ' | grep -o [0-9][0-9]\.[0-9]`
+    
+    cpuColor=$coolTemp
+    
+	cpuExp=$(echo "$cpuTemp > 65" | bc)
+	if [ $cpuExp -eq 1 ]
+        then
+                cpuColor=$warmTemp
+        fi
+	cpuExp=$(echo "$cpuTemp > 75" | bc)
+	if [ $cpuExp -eq 1 ]
+        then
+                cpuColor=$hotTemp
+        fi
+
+    cpuText="[${cpuTemp} C]"
+    cpuJSON="{ \"full_text\":\"${cpuText}\", \"color\":\"${cpuColor}\" },"
+	
+	echo "${line/[/$fanJSON$cpuJSON}" || exit 1
 done)
 
 i3status | (read line && echo $line && read line && echo $line && while :
