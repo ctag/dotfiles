@@ -22,7 +22,7 @@ i3status | (read line && echo $line && read line && echo $line && while :
 do
 	read line
 
-	gpuTemp0=`sensors | awk '$1 == "temp1:" && NR < 6 { print $2 }' | grep -o [0-9][0-9]\.[0-9]`
+	gpuTemp0=`sensors | awk '$1 == "temp1:" && NR < 6 { print $2 }' | grep -oE [0-9][0-9][0-9]?`
 
 	gpuColor0=$coolTemp
 
@@ -37,9 +37,9 @@ do
                 gpuColor0=$hotTemp
         fi
 
-cpuTemp=`sensors | awk '$1 == "temp2:" && NR > 30 { print $2 }' | grep -o [0-9][0-9]\.[0-9]`
+cpuTemp=`sensors | awk '$1 == "temp2:" && NR > 30 { print $2 }' | grep -oE [0-9][0-9][0-9]?`
 #echo "cpu: ${cpuTemp}"
-caseTemp=`sensors | awk '$1 == "temp3:" && NR > 30 { print $2 }' | grep -o [0-9][0-9]\.[0-9]`
+caseTemp=`sensors | awk '$1 == "temp3:" && NR > 30 { print $2 }' | grep -oE [0-9][0-9][0-9]?`
 #echo "case: ${caseTemp}"
 
 cpuColor=$coolTemp

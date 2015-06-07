@@ -131,10 +131,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym n resize grow height 10 px or 10 ppt
+        bindsym e resize shrink height 10 px or 10 ppt
+        bindsym i resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -161,12 +161,12 @@ bindsym $mod+r mode "resize"
 workspace 1 output DVI-I-1
 workspace 2 output DVI-I-1
 workspace 3 output DVI-I-1
-workspace 4 output DVI-D-1
-workspace 5 output DVI-D-1
-workspace 6 output DVI-D-1
-workspace 7 output HDMI-1
-workspace 8 output HDMI-1
-workspace 9 output HDMI-1
+workspace 4 output DP-0
+workspace 5 output DP-0
+workspace 6 output DP-0
+workspace 7 output DVI-D-0
+workspace 8 output DVI-D-0
+workspace 9 output DVI-D-0
 
 #
 # Keybindings
@@ -192,6 +192,9 @@ bindsym $mod+Shift+s exec /home/berocs/.i3/feh_bg_split.sh
 
 # Set individual backgrounds
 bindsym $mod+Shift+i exec /home/berocs/.i3/feh_bg_indiv.sh
+
+# Set individual backgrounds
+bindsym $mod+Shift+h exec /home/berocs/.i3/feh_bg_local.sh
 
 # Default programs keybinding
 bindsym Control+$mod+p exec /home/berocs/.i3/init_programs.sh
@@ -219,7 +222,7 @@ workspace_layout tabbed # Set mode to tabbed by default
 #
 
 # Set backgrounds
-exec_always /home/berocs/.i3/feh_bg_indiv.sh
+#exec_always /home/berocs/.i3/feh_bg_indiv.sh
 
 # Start Udiskie -> Now handled in .xinitrc
 #exec udiskie &
