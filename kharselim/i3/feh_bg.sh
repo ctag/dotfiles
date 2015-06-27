@@ -1,10 +1,14 @@
 #!/bin/bash
 
+# Regular random background
 image0=$(shuf -n1 -e /home/berocs/Pictures/backgrounds/*)
 feh -x -Z -F -d --bg-fill $image0 &
 
-exit
+# Show the colemak image
+#image0=/home/berocs/Pictures/colemak_layout.gif
+#feh -x -F --bg-center $image0 &
 
-image3=$(shuf -n1 -e /mnt/berocs/pictures/backgrounds/*)
-DISPLAY=:0.3 feh -x -Z -F -d --bg-fill $image3 &
+# Dunno
+#image3=$(shuf -n1 -e /mnt/berocs/pictures/backgrounds/*)
+#DISPLAY=:0.3 feh -x -Z -F -d --bg-fill $image3 &
 
