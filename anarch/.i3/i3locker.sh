@@ -1,9 +1,13 @@
 #!/bin/bash
 
+sleep 1
+
 # Start xscreensaver
-DISPLAY=:0 xscreensaver-command --lock
+xscreensaver-command --lock
 
 sleep 5
+
+exit
 
 /home/berocs/.i3/screen.sh standby
 

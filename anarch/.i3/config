@@ -173,13 +173,14 @@ workspace 9 output DVI-D-0
 #
 
 # Start i3lock with extra feh panes
-bindsym Control+$mod+l exec /home/berocs/.i3/i3locker.sh
+bindsym Control+$mod+l exec /home/berocs/.i3/forceoff.sh
 
-# Lock screen and turn off monitors
+# Lock mouse, screen, turn off monitors
 bindsym Control+$mod+o exec /home/berocs/.i3/forceoff.sh
 
-# Unlock mouse and turn on monitors
+# Unlock mouse, turn on monitors
 bindsym Control+$mod+i exec /home/berocs/.i3/forceon.sh
+bindsym $mod+Control+Alt_L exec /home/berocs/.i3/enable_mouse.sh
 
 # Set brightness down
 bindsym $mod+mod1+Down exec /home/berocs/.i3/brightness/dimall.sh

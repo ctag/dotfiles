@@ -1,11 +1,13 @@
 #!/bin/bash
 
-#sleep 1s
+sleep 1s
 
-#xinput --disable 9
+xinput set-int-prop 10 "Device Enabled" 8 0
+
+sleep 1s
+
+/home/berocs/.i3/i3locker.sh
 
 sleep 1s
 
 xset dpms force off
-
-#xautolock -locknow
