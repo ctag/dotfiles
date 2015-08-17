@@ -224,6 +224,16 @@ workspace_layout tabbed # Set mode to tabbed by default
 
 # Set backgrounds
 #exec_always /home/berocs/.i3/feh_bg_indiv.sh
+exec /home/berocs/.i3/xscreensaver_bg.sh
+
+# Start mouse-disabling script
+exec /home/berocs/.i3/auto_mouse.sh &
+
+# Start Compton
+exec compton -b --backend glx
+
+# Export dbus session address for cron jobs
+exec /home/berocs/Documents/dotfiles/anarch/dbus_export.sh
 
 # Start Udiskie -> Now handled in .xinitrc
 #exec udiskie &
@@ -232,7 +242,7 @@ workspace_layout tabbed # Set mode to tabbed by default
 exec pulseaudio --start &
 
 # Start redshift on all monitors
-#exec redshift -m vidmode &
+exec redshift &
 
 #
 # Start i3bar to display a workspace bar (plus the system information i3status
