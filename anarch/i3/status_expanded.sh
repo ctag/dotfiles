@@ -66,11 +66,15 @@ caseColor=$coolTemp
                 caseColor=$hotTemp
         fi
 
+bigbero=`/home/berocs/.i3/bigbero_check.sh`
+csb=`/home/berocs/.i3/csb0019_check.sh`
 
 
 insert="[{\"full_text\":\"GPU0 [$gpuTemp0 C]\",\"color\":\"$gpuColor0\"},\
 {\"full_text\":\"CPU [$cpuTemp C]\",\"color\":\"$cpuColor\"},\
-{\"full_text\":\"CASE [$caseTemp C]\",\"color\":\"$caseColor\"},"
+{\"full_text\":\"CASE [$caseTemp C]\",\"color\":\"$caseColor\"},\
+{\"full_text\":\"GMAIL [$bigbero]\",\"color\":\"$warmTemp\"},\
+{\"full_text\":\"UAH [$csb]\",\"color\":\"$warmTemp\"},"
 
 	echo "${line/[/$insert}" || exit 1
 #	echo " $gpuTemp1 $line " || exit 1
