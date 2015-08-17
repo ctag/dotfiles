@@ -15,9 +15,10 @@ i3status | (read line && echo $line && read line && echo $line && while :
 do
 	read line
 	fan=`sensors | awk '$1 == "fan1:" { print $2 }'`
-	
+	fan=`echo "${fan}/10" | bc`
+
 	fanColor=$coolTemp
-	fanExp=$(echo "$fan > 520" | bc)
+	fanExp=$(echo "$fan > 400" | bc)
 	if [ $fanExp -eq 1 ]
         then
                 fanColor=$hotTemp
@@ -49,17 +50,15 @@ do
 
     cpuText="[${cpuTemp} C]"
     cpuJSON="{ \"full_text\":\"${cpuText}\", \"color\":\"${cpuColor}\" },"
+
+    bigberoEmail=`/home/berocs/unread_bigbero.sh`
+    bigberoText="[GMAIL ${bigberoEmail}]"
+    bigberoJSON="{ \"full_text\":\"${bigberoText}\", \"color\":\"${warmTemp}\" },"
+
+    uahEmail=`/home/berocs/unread_csb0019.sh`
+    uahText="[UAH ${uahEmail}]"
+    uahJSON="{ \"full_text\":\"${uahText}\", \"color\":\"${warmTemp}\" },"
 	
-	echo "${line/[/$fanJSON$cpuJSON}" || exit 1
+    echo "${line/[/${fanJSON}${cpuJSON}${bigberoJSON}${uahJSON}}" || exit 1
 done)
-
-i3status | (read line && echo $line && read line && echo $line && while :
-do
-  read line
-  dat=$(measure-net-speed.bash)
-  dat="[{ \"full_text\": \"${dat}\" },"
-  echo "${line/[/$dat}" || exit 1
-done)
-
-
 
