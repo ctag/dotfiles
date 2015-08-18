@@ -66,9 +66,8 @@ caseColor=$coolTemp
                 caseColor=$hotTemp
         fi
 
-bigbero=`/home/berocs/.i3/bigbero_check.sh`
-csb=`/home/berocs/.i3/csb0019_check.sh`
-
+bigbero=`/home/berocs/unread_bigbero.sh`
+csb=`/home/berocs/unread_csb0019.sh`
 
 insert="[{\"full_text\":\"GPU0 [$gpuTemp0 C]\",\"color\":\"$gpuColor0\"},\
 {\"full_text\":\"CPU [$cpuTemp C]\",\"color\":\"$cpuColor\"},\

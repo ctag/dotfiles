@@ -155,6 +155,10 @@ bindsym $mod+r mode "resize"
 bindsym Control+$mod+o exec /home/berocs/.i3/screen.sh off
 bindsym XF86Display exec /home/berocs/.i3/screen.sh off
 
+# Backlight
+bindsym XF86MonBrightnessUp exec /home/berocs/.i3/backlight.sh inc 15
+bindsym XF86MonBrightnessDown exec /home/berocs/.i3/backlight.sh dec 15
+
 # Volume control
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute
 bindsym XF86AudioLowerVolume  exec amixer -q sset Master 5%- unmute
