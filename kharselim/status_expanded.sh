@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Statusbar expanded
-# Christopher Bero [bigbero@gmail.com]
+# Christopher Bero [gmail@gmail.com]
 # 2015
 
 #
@@ -52,18 +52,18 @@ do
     cpuText="[${cpuTemp} C]"
     cpuJSON="{ \"full_text\":\"${cpuText}\", \"color\":\"${cpuColor}\" },"
 
-    bigberoEmail=`/home/berocs/unread_bigbero.sh`
-    
-    bigberoColor=$coolTemp
+    gmailEmail=`/home/berocs/unread_bigbero.sh`
+    gmailColor=$coolTemp
 
-    if [ "$bigberoEmail" -gt "0" ]; then
-        bigberoColor=$warmTemp
-    elif [ "$bigberoEmail" -gt 1 ]; then
-        bigberoColor=$hotTemp
+    if [ "$gmailEmail" -gt "0" ]; then
+        gmailColor=$warmTemp
+    fi
+    if [ "$gmailEmail" -gt "1" ]; then
+        gmailColor=$hotTemp
     fi
 
-    bigberoText="[GMAIL ${bigberoEmail}]"
-    bigberoJSON="{ \"full_text\":\"${bigberoText}\", \"color\":\"${bigberoColor}\" },"
+    gmailText="[GMAIL ${gmailEmail}]"
+    gmailJSON="{ \"full_text\":\"${gmailText}\", \"color\":\"${gmailColor}\" },"
 
     uahEmail=`/home/berocs/unread_csb0019.sh`
     
@@ -71,13 +71,14 @@ do
 
     if [ "$uahEmail" -gt "0" ]; then
         uahColor=$warmTemp
-    elif [ "$uahEmail" -gt 1 ]; then
+    fi
+    if [ "$uahEmail" -gt "1" ]; then
         uahColor=$hotTemp
     fi
     
     uahText="[UAH ${uahEmail}]"
     uahJSON="{ \"full_text\":\"${uahText}\", \"color\":\"${uahColor}\" },"
 	
-    echo "${line/[/${fanJSON}${cpuJSON}${bigberoJSON}${uahJSON}}" || exit 1
+    echo "${line/[/${fanJSON}${cpuJSON}${gmailJSON}${uahJSON}}" || exit 1
 done)
 
