@@ -18,20 +18,21 @@ do
 	fan=`echo "${fan}/10" | bc`
 
 	fanColor=$coolTemp
-	fanExp=$(echo "$fan > 400" | bc)
+	
+    fanExp=$(echo "$fan > 400" | bc)
 	if [ $fanExp -eq 1 ]
-        then
-                fanColor=$hotTemp
-        fi
+    then
+        fanColor=$hotTemp
+    fi
+    
     fanExp=$(echo "$fan < 100" | bc)
 	if [ $fanExp -eq 1 ]
-        then
-                fanColor=$hotTemp
-        fi
+    then
+        fanColor=$hotTemp
+    fi
     
     fanText="[${fan} RPM]"
 	fanJSON="[{ \"full_text\":\"${fanText}\",\"color\":\"$fanColor\" },"
-	#"[{\"full_text\":\"GPU0 [0 C]\",\"color\":\"$gpuColor0\"},
     
     cpuTemp=`sensors | awk '$1 == "temp1:" && NR > 4 && NR < 10 { print $2 } ' | grep -o [0-9][0-9]\.[0-9]`
     
@@ -39,25 +40,43 @@ do
     
 	cpuExp=$(echo "$cpuTemp > 65" | bc)
 	if [ $cpuExp -eq 1 ]
-        then
-                cpuColor=$warmTemp
-        fi
+    then
+        cpuColor=$warmTemp
+    fi
 	cpuExp=$(echo "$cpuTemp > 75" | bc)
 	if [ $cpuExp -eq 1 ]
-        then
-                cpuColor=$hotTemp
-        fi
+    then
+        cpuColor=$hotTemp
+    fi
 
     cpuText="[${cpuTemp} C]"
     cpuJSON="{ \"full_text\":\"${cpuText}\", \"color\":\"${cpuColor}\" },"
 
     bigberoEmail=`/home/berocs/unread_bigbero.sh`
+    
+    bigberoColor=$coolTemp
+
+    if [ "$bigberoEmail" -gt "0" ]; then
+        bigberoColor=$warmTemp
+    elif [ "$bigberoEmail" -gt 1 ]; then
+        bigberoColor=$hotTemp
+    fi
+
     bigberoText="[GMAIL ${bigberoEmail}]"
-    bigberoJSON="{ \"full_text\":\"${bigberoText}\", \"color\":\"${warmTemp}\" },"
+    bigberoJSON="{ \"full_text\":\"${bigberoText}\", \"color\":\"${bigberoColor}\" },"
 
     uahEmail=`/home/berocs/unread_csb0019.sh`
+    
+    uahColor=$coolTemp
+
+    if [ "$uahEmail" -gt "0" ]; then
+        uahColor=$warmTemp
+    elif [ "$uahEmail" -gt 1 ]; then
+        uahColor=$hotTemp
+    fi
+    
     uahText="[UAH ${uahEmail}]"
-    uahJSON="{ \"full_text\":\"${uahText}\", \"color\":\"${warmTemp}\" },"
+    uahJSON="{ \"full_text\":\"${uahText}\", \"color\":\"${uahColor}\" },"
 	
     echo "${line/[/${fanJSON}${cpuJSON}${bigberoJSON}${uahJSON}}" || exit 1
 done)
