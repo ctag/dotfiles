@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# Statusbar expanded
-# Christopher Bero [gmail@gmail.com]
-# 2015
-
 #
 # GPU0, GPU1, CPU, and CASE Temperatures
 #
