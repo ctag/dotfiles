@@ -78,15 +78,36 @@ cpuColor=$coolTemp
                 cpuColor=$hotTemp
         fi
 
-bigbero=`/home/berocs/unread_bigbero.sh`
-csb=`/home/berocs/unread_csb0019.sh`
+	gmailEmail=`/home/berocs/unread_bigbero.sh`
+    gmailColor=$coolTemp
+
+    if [ "$gmailEmail" -gt "0" ]; then
+        gmailColor=$warmTemp
+    fi
+    if [ "$gmailEmail" -gt "1" ]; then
+        gmailColor=$hotTemp
+    fi
+
+    gmailText="[GMAIL ${gmailEmail}]"
+    gmailJSON="{ \"full_text\":\"${gmailText}\", \"color\":\"${gmailColor}\" },"
+
+    uahEmail=`/home/berocs/unread_csb0019.sh`
+    uahColor=$coolTemp
+
+    if [ "$uahEmail" -gt "0" ]; then
+        uahColor=$warmTemp
+    fi
+    if [ "$uahEmail" -gt "1" ]; then
+        uahColor=$hotTemp
+    fi
+
 
 insert="[{\"full_text\":\"GPU0 [$gpuTemp0 C]\",\"color\":\"$gpuColor0\"},\
 {\"full_text\":\"CPU [$cpuTemp C]\",\"color\":\"$cpuColor\"},\
 {\"full_text\":\"CPU2 [$cpuTemp2 C]\",\"color\":\"$cpuColor\"},\
 {\"full_text\":\"CPU3 [$cpuTemp3 C]\",\"color\":\"$cpuColor\"},\
-{\"full_text\":\"GMAIL [$bigbero]\",\"color\":\"$warmTemp\"},\
-{\"full_text\":\"UAH [$csb]\",\"color\":\"$warmTemp\"},"
+{\"full_text\":\"GMAIL [$gmailEmail]\",\"color\":\"$gmailColor\"},\
+{\"full_text\":\"UAH [$uahEmail]\",\"color\":\"$uahColor\"},"
 
 	echo "${line/[/$insert}" || exit 1
 #	echo " $gpuTemp1 $line " || exit 1
