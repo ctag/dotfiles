@@ -22,7 +22,7 @@ i3status | (read line && echo $line && read line && echo $line && while :
 do
 	read line
 
-	gpuTemp0=`sensors | awk '$1 == "temp1:" && NR < 6 { print $2 }' | grep -oE [0-9][0-9][0-9]?`
+	gpuTemp0=`nvidia-smi | awk 'NR == 9 { print $3 }' | grep -oE [0-9][0-9][0-9]?`
 
 	gpuColor0=$coolTemp
 
@@ -31,39 +31,51 @@ do
 	then
 		gpuColor0=$warmTemp
 	fi
-	gpuExp=$(echo "$gpuTemp0 > 73.0" | bc)
+	gpuExp=$(echo "$gpuTemp0 > 80.0" | bc)
         if [ $gpuExp -eq 1 ]
         then
                 gpuColor0=$hotTemp
         fi
 
-cpuTemp=`sensors | awk '$1 == "temp2:" && NR > 30 { print $2 }' | grep -oE [0-9][0-9][0-9]?`
+cpuTemp=`sensors | awk 'NR == 27 { print $2 }' | grep -oE [0-9][0-9][0-9]?`
 #echo "cpu: ${cpuTemp}"
-caseTemp=`sensors | awk '$1 == "temp3:" && NR > 30 { print $2 }' | grep -oE [0-9][0-9][0-9]?`
-#echo "case: ${caseTemp}"
+cpuTemp2=`sensors | awk 'NR == 28 { print $2 }' | grep -oE [0-9][0-9][0-9]?`
+#echo "cpu2: ${cpuTemp2}"
+cpuTemp3=`sensors | awk 'NR == 26 { print $2 }' | grep -oE [0-9][0-9][0-9]?`
+#echo "cpu3: ${cpuTemp3}"
 
 cpuColor=$coolTemp
-caseColor=$coolTemp
 
 	cpuExp=$(echo "$cpuTemp > 50.0" | bc)
 	if [ $cpuExp -eq 1 ]
         then
                 cpuColor=$warmTemp
         fi
-	cpuExp=$(echo "$cpuTemp > 60.0" | bc)
+	cpuExp=$(echo "$cpuTemp2 > 50.0" | bc)
 	if [ $cpuExp -eq 1 ]
         then
                 cpuColor=$warmTemp
         fi
-	caseExp=$(echo "$caseTemp > 55" | bc)
-	if [ $caseExp -eq 1 ]
+	cpuExp=$(echo "$cpuTemp3 > 50.0" | bc)
+	if [ $cpuExp -eq 1 ]
         then
-                caseColor=$hotTemp
+                cpuColor=$warmTemp
         fi
-	caseExp=$(echo "$caseTemp > 60" | bc)
-        if [ $caseExp -eq 1 ]
+
+	cpuExp=$(echo "$cpuTemp > 60.0" | bc)
+	if [ $cpuExp -eq 1 ]
         then
-                caseColor=$hotTemp
+                cpuColor=$hotTemp
+        fi
+	cpuExp=$(echo "$cpuTemp2 > 60.0" | bc)
+	if [ $cpuExp -eq 1 ]
+        then
+                cpuColor=$hotTemp
+        fi
+	cpuExp=$(echo "$cpuTemp3 > 60.0" | bc)
+	if [ $cpuExp -eq 1 ]
+        then
+                cpuColor=$hotTemp
         fi
 
 bigbero=`/home/berocs/unread_bigbero.sh`
@@ -71,7 +83,8 @@ csb=`/home/berocs/unread_csb0019.sh`
 
 insert="[{\"full_text\":\"GPU0 [$gpuTemp0 C]\",\"color\":\"$gpuColor0\"},\
 {\"full_text\":\"CPU [$cpuTemp C]\",\"color\":\"$cpuColor\"},\
-{\"full_text\":\"CASE [$caseTemp C]\",\"color\":\"$caseColor\"},\
+{\"full_text\":\"CPU2 [$cpuTemp2 C]\",\"color\":\"$cpuColor\"},\
+{\"full_text\":\"CPU3 [$cpuTemp3 C]\",\"color\":\"$cpuColor\"},\
 {\"full_text\":\"GMAIL [$bigbero]\",\"color\":\"$warmTemp\"},\
 {\"full_text\":\"UAH [$csb]\",\"color\":\"$warmTemp\"},"
 

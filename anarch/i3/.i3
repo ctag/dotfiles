@@ -1,1 +1,0 @@
-/home/berocs/Documents/dotfiles/anarch/.i3
