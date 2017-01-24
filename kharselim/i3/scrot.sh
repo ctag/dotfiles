@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd /home/berocs/Pictures/scrot/
+cd /home/berocs/pictures/scrot/
 scrot
